@@ -1,0 +1,13 @@
+default: &default
+  adapter: mysql2
+  username: jen_depot
+  password: jen_depot
+  host: localhost
+
+development:
+  <<: *default
+  database: jen_depot_development
+
+test:
+  <<: *default
+  database: jen_depot_test
