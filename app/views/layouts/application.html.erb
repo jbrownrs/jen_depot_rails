@@ -15,12 +15,12 @@
   <div id="columns">
     <div id="side">
       <ul>
-	<li><a href="http://www....">Home</a></li>
+	<li><a href="http://staging.app4.admin.cam.ac.uk/rails/jen_depot/">Home</a></li>
 	<li><a href="http://www..../faq">Questions</a></li>
 	<li><a href="http://www..../news">News</a></li>
 	<li><a href="http://www..../contact">Contact</a></li>
-	<li><%= Time.now.strftime("%H:%M %Z %d/%m/%Y") %></li>
       </ul>
+      <span><%= Time.now.strftime("%H:%M %Z %d/%m/%Y") %></span>
     </div>
     <div id="main">
       <%= yield %>

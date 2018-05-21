@@ -39,6 +39,7 @@
 
 #columns {
   background: #990000;
+  position: relative;  
 
   #main {
     margin-left: 17em;
@@ -48,10 +49,14 @@
 
   #side {
     float: left;
+    position: relative;
     padding: 1em 2em;
     width: 13em;
     background: #990000;
-
+    span {
+      position:absolute;
+      bottom: 0;
+    }
   ul {
     padding: 0;
     li {
