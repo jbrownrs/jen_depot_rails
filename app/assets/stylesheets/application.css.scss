@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
+ .button-to {
+   font-size: smaller;
+   font-color: red;
+   width: 3em;
+ }
 
  #banner {
    background: #9c9;
@@ -57,10 +61,30 @@
       position:absolute;
       bottom: 0;
     }
-  ul {
-    padding: 0;
-    li {
-      list-style: none;
+    
+    form, div {
+      display: inline;
+    }
+
+    input {
+      font-size: small;
+    }
+    
+    #cart {
+      font-size: smaller;
+      color: white;
+      
+      table {
+        border-top: 1px dotted #595;
+	border-bottom: 1px dotted #595;
+	margin-bottom: 10px;
+      }
+    }
+
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
         a {
           color: #f2f2f2;
           font-size: small;
@@ -68,5 +92,4 @@
       }
     }
   }
-}
-																	     
+}			
