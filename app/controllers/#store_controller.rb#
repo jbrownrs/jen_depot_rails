@@ -1,0 +1,17 @@
+class StoreController < ApplicationController
+  def index
+    @products = Product.order(:title)  
+    @counter = increment_count
+    if @counter > 5
+      @display_count = "Welcome! You have been here <%= pluralize(@counter 'time')%>"
+    end
+  end
+
+  protected 
+
+  def increment_count
+    # if counter is false or nil set to zero
+    session[:counter] ||= 0
+    session[:counter] += 1
+  end
+end
