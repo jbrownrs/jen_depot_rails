@@ -1,0 +1,7 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h2>It's Your Shopping Cart!</h2>
+
+<% render @cart %>

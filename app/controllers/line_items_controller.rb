@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]
+  before_action :set_cart, only: [:create, :decrease]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   
   # GET /line_items
@@ -64,6 +64,24 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to store_url, notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  #POST /line_items/1
+  #POST /line_items/1.json
+  def decrease
+   # @cart = Cart.find(session[:cart_id])
+    @line_item = @cart.line_items.find_by_id(params[:id]) # passing in line_item.id
+    @line_item = @line_item.decrease_quantity(@line_item.id)
+    respond_to do |format|
+      if @line_item.save
+        format.html { redirect_to store_url, notice: 'Line item was successfully updated.' }
+        format.js {@current_item = @line_item}
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+      end
     end
   end
 

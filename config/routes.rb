@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  resources :line_items
+
+  resources :orders
+
+  resources :line_items do
+    #member do
+    #  post 'decrease'
+    #end
+    post :decrease, on: :member
+  end
 
   resources :carts
 

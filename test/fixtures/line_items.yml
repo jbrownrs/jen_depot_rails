@@ -2,8 +2,9 @@
 
 one:
   product_id: products(:ruby).id
+  order: one
   cart_id: 
 
 two:
   product_id: products(:two).id
-  cart_id: 
+  cart: one
