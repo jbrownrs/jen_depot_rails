@@ -2,7 +2,8 @@
 
 <table>
   <% @products.each do |product| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <% if I18n.locale.to_s  == product.locale %> 
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
       <td>
 	<%= image_tag(product.image_url, class: 'list_image') %>
       </td> 
@@ -10,6 +11,7 @@
 	<dl>
 	  <dt><%= product.title %></dt>
 	  <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
+	  <dd>Locale:<%= product.locale %></dd>
 	</dl>
       </td>
       <td class="list_actions">
@@ -17,6 +19,7 @@
         <%= link_to 'Edit', edit_product_path(product) %><br/>
         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
+  <% end %>
 <% end %>
 </table>
 <br />

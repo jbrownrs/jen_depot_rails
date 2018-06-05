@@ -1,13 +1,24 @@
 Rails.application.routes.draw do
+#jen_depot::Application.routes.draw do
+  get 'admin' => 'admin#index'
 
-  resources :orders
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
 
-  resources :line_items do
+  get 'sessions/create'
+  get 'sessions/destroy'
+
+  resources :users
+#  resources :orders
+#  resources :line_items do
     #member do
     #  post 'decrease'
     #end
-    post :decrease, on: :member
-  end
+#    post :decrease, on: :member
+#  end
 
   resources :carts
 
@@ -20,7 +31,15 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'store#index', as: 'store'
+
+  scope '(:locale)' do
+    resources :orders
+    resources :line_items do
+      post :decrease, on: :member
+    end
+    resources :carts
+    root 'store#index', as: 'store', via: :all
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

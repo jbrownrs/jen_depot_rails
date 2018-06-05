@@ -1,0 +1,19 @@
+OrderNotifier#received
+
+<%= @greeting %>, find me in app/views/order_notifier/received.text.erb
+ / models/
+[jab229@rich jen_depot]$ cd app/mailers/
+[jab229@rich mailers]$ ls
+order_notifier.rb
+[jab229@rich mailers]$ emacs order_notifier.rb
+
+[62]+  Stopped                 emacs order_notifier.rb
+[jab229@rich mailers]$ cd ..
+[jab229@rich app]$ cd ..
+[jab229@rich jen_depot]$ emacs config/locales/en.yml
+
+[63]+  Stopped                 emacs config/locales/en.yml
+[jab229@rich jen_depot]$ emacs app/views/order_notifier/received.text.erb
+File Edit Options Buffers Tools Help
+OrderNotifier#received
+

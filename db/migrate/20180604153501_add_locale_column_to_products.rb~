@@ -1,0 +1,5 @@
+class AddLocaleColumnToProducts < ActiveRecord::Migration
+  def change
+    add_column :products, :locale, :
+  end
+end
