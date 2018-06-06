@@ -4,7 +4,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:set_locale]
+      redirect_to products_url(locale: params[:set_locale])
+    else
+      @products = Product.all
+    end
   end
 
   # GET /products/1

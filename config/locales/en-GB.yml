@@ -12,15 +12,16 @@
 #
 # To use a different locale, set it with `I18n.locale`:
 #
-#     I18n.locale = :es
+# I18n.locale = :es
 #
 # This would use the information in config/locales/es.yml.
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+en-GB:
   hello: "Hello world"
+  thanks: "Thanks for the moolah."
   
   layouts:
     application:
@@ -60,8 +61,10 @@ en:
       email: "E-mail"
       pay-type: "Pay with"
       pay_prompt_html: "Select a payment method"
-
-  activerecord:
-    errors:
-      messages:
-        inclusion:
+  
+  errors:
+    template:
+      body: "There were problems with the following fields:"
+      header:
+        one: "1 error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"

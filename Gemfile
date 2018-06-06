@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use MySQL  as the database for Active Record
@@ -42,3 +41,8 @@ gem 'bcrypt-ruby', '~> 3.1.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use rails money gem to handle currency
+gem 'money-rails', '~>1'
+
+# Use Google currency for currency conversion
+gem 'goog_currency'

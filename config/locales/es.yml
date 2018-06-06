@@ -3,7 +3,7 @@ es:
   number:
     currency:
       format:
-        unit:      "GBP £"
+        unit:      "€"
         precision: 2
         separator: ","
         delimiter: "."
